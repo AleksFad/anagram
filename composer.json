@@ -100,7 +100,10 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "5.1.*"
+            "require": "5.1.*",
+            "symfony-app-dir": "app",
+            "symfony-bin-dir": "bin",
+            "symfony-var-dir": "var"
         }
     }
 }
