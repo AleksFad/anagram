@@ -73,14 +73,10 @@ return [[
 '%5B%5BC%5DApp%5CController%5CAnagramController%23fetchUrl%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CSearchController%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CSearchController%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CSearchController%23__construct%5D%5B1%5D' => 1,
-'%5B%5BC%5DApp%5CController%5CSearchController%23__construct%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CSearchController%23is_anagram%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CSearchController%23is_anagram%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CSearchController%23search%5D%5B1%5D' => 5,
 '%5B%5BC%5DApp%5CController%5CSearchController%23search%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CSearchController%24entityManager%5D%5B1%5D' => 1,
-'%5B%5BC%5DApp%5CController%5CSearchController%24entityManager%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CAnagram%5D%5B1%5D' => 6,
 '%5B%5BC%5DApp%5CEntity%5CAnagram%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CAnagram%23getId%5D%5B1%5D' => 1,
@@ -632,7 +628,7 @@ return [[
 
 0 => 'N;',
 1 => [],
-2 => 1597936643,
+2 => 1597949657,
 3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -756,6 +752,9 @@ return [[
             'stdClass' => [
                 'length' => [
                     255,
+                ],
+                'unique' => [
+                    true,
                 ],
             ],
         ],
