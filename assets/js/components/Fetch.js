@@ -1,26 +1,18 @@
-import React, {Component} from 'react';
+import React, { useEffect,useState } from 'react';
 import axios from 'axios';
 
 import Welcome from './Welcome';
 
-class Fetch extends Component {
-    constructor() {
-        super();
-        this.state = { loading: true}
-    }
 
-    componentDidMount() {
-        this.getDatabase();
-    }
+const Fetch = () => {
+    const [loading, setLoading] = useState(false);
 
-    getDatabase() {
-        axios.get(`http://127.0.0.1:8000/api/fetch`).then(res => {
-            this.setState({ loading: false })
+    useEffect(() => {
+        axios.get(`http://127.0.0.1:8000/api/fetch`).then(() => {
+            setLoading(false);
         })
-    }
+    },[]);
 
-    render() {
-        const loading = this.state.loading;
         return (
             <div>
                 <Welcome />
@@ -40,7 +32,6 @@ class Fetch extends Component {
                 </section>
             </div>
         )
-    }
 }
 
 export default Fetch;

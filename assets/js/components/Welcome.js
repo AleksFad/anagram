@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import {Link} from "react-router-dom";
-import {Button} from "reactstrap";
+import { Button } from "reactstrap";
 import Navbar from "./Navbar";
 
 const Welcome = () => {

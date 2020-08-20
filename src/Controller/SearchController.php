@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use Doctrine\DBAL\DBALException;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,6 +10,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class SearchController extends AbstractController
 {
     /**
+     * Simple algorithm function to check if array value and search value are anagrams to each other.
+     * If their count chars in word are same = they are anagrams
      * @param $result
      * @param $query
      * @return array
@@ -27,10 +27,16 @@ class SearchController extends AbstractController
     }
 
     /**
+     * Sanitize and trim search input.
+     * Create query using create builder and pass value
+     * QUERY LOGIC:
+     *  - anagram length needs to be same as searched value
+     *  - anagram need to consist of 1 chart as searched value (optional choice, but decided to leave that)
+     *  - anagram cannot be same as searched value. Example: user_input(hello) != DB(hello)
+     * Found anagrams deliver to Front-End
      * @Route("api/search", name="anagram_result")
      * @param Request $request
      * @return Response
-     * @throws DBALException
      */
     public function search(Request $request)
     {

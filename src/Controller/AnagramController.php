@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AnagramController extends AbstractController
 {
     /**
+     * Home route. Render React app.js
      * @Route("/{reactRouting}", name="home", defaults={"reactRouting": null})
      */
     public function index()
@@ -18,6 +19,7 @@ class AnagramController extends AbstractController
     }
 
     /**
+     * Fetch data from url and send array to execute method
      * @Route("/api/fetch", name="fetch")
      */
     public function fetch()
@@ -34,6 +36,10 @@ class AnagramController extends AbstractController
         return new Response();
     }
 
+    /**
+     * Create query from array values and insert data to database
+     * @param $words
+     */
     public function execute($words)
     {
         $sql = array();
@@ -47,7 +53,13 @@ class AnagramController extends AbstractController
         $statement->execute();
     }
 
-    // Curl example
+
+    /**
+     * Get content from url using CURL function
+     * @param $uri
+     * @return false|string
+     * @throws Exception
+     */
     function fetchUrl($uri)
     {
         $handle = curl_init();

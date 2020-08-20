@@ -57,7 +57,6 @@ const Search = () => {
                         <div className={'row text-center'}>
                             <Form name={'search-form'} inline onSubmit={ (e) => submitForm(e) }>
                                 <FormGroup check className="mb-2 mr-sm-2 mb-sm-0">
-                                    <Label for="search"></Label>
                                     <Input
                                         valid={ searchState === 'has-success' }
                                         invalid={ searchState === 'has-danger' }
@@ -73,7 +72,7 @@ const Search = () => {
                                     <FormFeedback valid>That it is sweet</FormFeedback>
                                     <FormFeedback>String cannot be blank</FormFeedback>
                                 </FormGroup>
-                                <Button type="submit" color="success" value="search">Search</Button>
+                                <Button disabled={!search} type="submit" color="success" value="search">Search</Button>
                             </Form>
 
                         </div>
