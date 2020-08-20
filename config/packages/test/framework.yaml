@@ -1,0 +1,7 @@
+framework:
+    profiler:
+        enabled: false
+        collect: false
+    test: true
+    session:
+        storage_id: session.storage.mock_file
